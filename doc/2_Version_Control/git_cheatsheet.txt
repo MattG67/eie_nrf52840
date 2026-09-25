@@ -3,6 +3,34 @@ git branch : creates a new branch
 git checkout : switches the working brach, add -b to make a new brach and go to it
 git pull : downloads and combines the work, add --rebase to make it work better
 git push : pushes your work to the remote
-git merge : make the current branch and target branch
+git merge : merge the current branch and target branch
 git rebase : makes the current commit based out of other branch
 git fetch : downloads remote
+git add
+git status
+git diff
+
+git init         : turns the current folder into a git project
+git clone <url>  : downloads someone else's project onto your computer
+
+git status       : shows what's changed since your last save
+git diff         : shows the exact lines you changed
+git log          : shows your commit history
+
+git add <file>   : stages a file to be saved (add . stages everything)
+git commit -m "" : creates a new commit in the working branch, saving what's staged
+
+git branch       : lists branches, or creates one if you give it a name (doesn't switch you to it)
+git checkout     : switches the working branch, add -b to make a new branch and go to it
+git switch       : newer/simpler way to switch branches, use -c to create + switch
+git merge        : brings another branch's changes into the branch you're currently on
+git rebase       : replays your commits on top of another branch, instead of merging histories
+
+git remote add origin <url> : connects your project to an online repo
+git fetch        : downloads remote changes without touching your files yet
+git pull         : downloads and combines the work, add --rebase to make it work better
+git push         : pushes your work to the remote
+
+git restore <file> : throws away uncommitted changes to a file
+git reset <file>   : un-stages a file without deleting your changes
+git stash          : temporarily shelves uncommitted changes so you can switch branches cleanly
