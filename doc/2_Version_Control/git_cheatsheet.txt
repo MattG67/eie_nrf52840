@@ -1,0 +1,8 @@
+git commit : creats a new commit in the working branch
+git branch : creates a new branch
+git checkout : switches the working brach, add -b to make a new brach and go to it
+git pull : downloads and combines the work, add --rebase to make it work better
+git push : pushes your work to the remote
+git merge : make the current branch and target branch
+git rebase : makes the current commit based out of other branch
+git fetch : downloads remote
