@@ -22,20 +22,41 @@ int main(void) {
   }
   printk("LED < 0");
 
-  int i = 0;
+  LED_set(LED0, LED_ON);
 
+  int password[] = {0,1,2};
+  int pass_len = sizeof(password)/sizeof(password[0]);
+  int entered[pass_len];
+  int i = 0;
   while (1) {
-    if(i == 16)
-      i=0;
     if(BTN_check_clear_pressed(BTN0)){
-      i++;
-      printk("Button 0 pressed");
+      entered[i] = 0;
+        i++;
     }
-    LED_set(LED0, i & (1 << 0));
-    LED_set(LED1, i & (1 << 1));
-    LED_set(LED2, i & (1 << 2));
-    LED_set(LED3, i & (1 << 3));
-    
+    if(BTN_check_clear_pressed(BTN1)){
+      entered[i] = 1;
+        i++;
+    }
+    if(BTN_check_clear_pressed(BTN2)){
+      entered[i] = 2;
+        i++;
+    }
+
+    if(BTN_check_clear_pressed(BTN3)){
+      for(int j = 0; j<i; j++){
+        if(entered[j] != password[j]){
+          i=0;
+          break;
+        }
+
+      }
+      LED_set(LED0, LED_OFF);
+
+    }
+
+    if(i > pass_len)
+      i = 0;
+
 
     k_msleep(SLEEP_MS);
   
