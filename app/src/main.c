@@ -22,12 +22,21 @@ int main(void) {
   }
   printk("LED < 0");
 
+  int i = 0;
 
   while (1) {
+    if(i == 16)
+      i=0;
     if(BTN_check_clear_pressed(BTN0)){
-      LED_toggle(LED0);
+      i++;
       printk("Button 0 pressed");
     }
+    LED_set(LED0, i & (1 << 0));
+    LED_set(LED1, i & (1 << 1));
+    LED_set(LED2, i & (1 << 2));
+    LED_set(LED3, i & (1 << 3));
+    
+
     k_msleep(SLEEP_MS);
   
   }
