@@ -16,12 +16,17 @@ int main(void) {
   if (0 > BTN_init()) {
     return 0;
   }
+  printk("BTN < 0");
   if (0 > LED_init()) {
     return 0;
   }
+  printk("LED < 0");
+
+  LED_blink(LED0, LED_1HZ);
 
   while (1) {
     k_msleep(SLEEP_MS);
+    printk("Looped");
   }
   return 0;
 }
